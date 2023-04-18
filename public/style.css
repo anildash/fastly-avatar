@@ -160,7 +160,7 @@ body {
 .wrapper {
   min-height: var(--wrapper-height);
   place-items: center;
-  margin: 3rem 2rem 0;
+  margin: 1rem 2rem 0;
 }
 .content {
   display: flex;
@@ -237,9 +237,8 @@ body {
 
 /* Typography */
 p {
-  margin: 0 0 1rem 0;
+  margin: 1rem;
   line-height: 1.5 !important;
-  font-size: clamp(1rem, 0.25rem + 3.3333vw, 2rem);
 }
 h1,
 h2,
@@ -254,7 +253,7 @@ h5 {
 }
 h1 {
   margin-top: 1rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1rem;
   font-size: clamp(2rem, -0.875rem + 8.333vw, 3rem);
   display: inline-flex;
   color: var(--color-primary);
@@ -284,6 +283,10 @@ a:active,
 a:focus {
   background: var(--color-primary);
 }
+
+form {
+  margin-top: 2rem;
+}
 /******************************************************************************
 END Page structure and element resets
 ******************************************************************************/
@@ -300,6 +303,11 @@ Select your chosen CSS by adding the theme name (e.g. glitch) in settings.json
   display: flex;
   justify-content: center;
 }
+
+.content p {
+  color: #ffffff;
+}
+
 .avatar {
   max-width: var(--avatar-max-width);
   max-height: var(--avatar-max-width);

@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- OpenGraph/Social sharing -->
-    <meta name="description" content="My meta description." />
-    <meta name="og:description" content="My meta description." />
+    <meta name="description" content="Make Your Fastly Avatar!" />
+    <meta name="og:description" content="Make Your Fastly Avatar!" />
     <meta
       property="og:image"
-      content="https://cdn.glitch.com/560ed5ed-9d00-433a-9ff9-7750d79d13da%2FGlitch_TeamAvatar.png?v&#x3D;1624643105812"
+      content="https://cdn.glitch.global/a9b09f01-4e09-4e41-b034-9ee762850753/tachometer-red-SVG.svg?v=1681790330400"
     />
     <meta property="og:title" content="Fastly Avatar!" />
     <meta name="twitter:card" content="summary" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="icon" href="https://fastly.com/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Inter:regular,italic,extrabold"
       rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link
       rel="apple-touch-icon"
-      href="https://cdn.glitch.me/efc5414a-882b-4708-af81-8461abbc1a82%2Ftouch-icon.png?v=1633521972305"
+      href="https://cdn.glitch.global/a9b09f01-4e09-4e41-b034-9ee762850753/tachometer-red-SVG.svg?v=1681790330400"
     />
 
     <!-- PWA setup - update public/sw.js if you add your own assets like a new .css file -->
@@ -65,12 +65,6 @@
             />
           </div>
           <h1>Make Your Fastly Avatar!</h1>
-          <p>
-            Pick your favorite headshot of yourself (square image, please!), then choose a style of logo to overlay on your picture. Click "Gimme my avatar!" and your image will automatically download, ready to use.
-          </p>
-          <p>
-            <strong>Tip:</strong> You can make more than one! Maybe you want to show off your Fastly 
-          </p>
 
           <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" id="image-upload" name="file" accept="image/*" />
@@ -87,6 +81,11 @@
               <option value="nyc-red">NYC Red</option>
               <option value="nyc-violet">NYC Violet</option>
               <option value="nyc-wine">NYC Wine</option>
+              <option value="logo-blackly">Blackly Logo</option>
+              <option value="logo-fact">FACT Logo</option>
+              <option value="logo-hola">HOLA Logo</option>
+              <option value="logo-starly">Starly Logo</option>
+              <option value="logo-wage">WAGE Logo</option>
               <option value="tach-overlay-black">Tach Black (Right)</option>
               <option value="tach-overlay-black-left">Tach Black (Left)</option>
               <option value="tach-overlay-white">Tach White (Right)</option>
@@ -98,6 +97,14 @@
             </div>
 
             <button type="submit" id="submit-button">Gimme my avatar!</button>          </form>
+          <p>
+            Pick your favorite headshot of yourself (square image, please!), then choose a style of logo to overlay on your picture. Click "Gimme my avatar!" and your image will automatically download, ready to use.
+          </p>
+
+            <p>
+              <strong>Tip:</strong> You can make more than one! Show off your favorite Fastly community inside the company, and have a nice clean Fastly logo on your public-facing profiles.
+            </p>
+        
         </div>
       </div>
 
@@ -156,12 +163,12 @@
               var y, i, k, s, h, sl, yl;
               s = this.parentNode.parentNode.getElementsByTagName("select")[0];
               sl = s.length;
-              console.log(this.parentNode.previousSibling)
               h = this.parentNode.previousSibling;
               for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                   s.selectedIndex = i;
                   h.innerHTML = this.innerHTML;
+                  h.style.backgroundImage = 'url("https://fastly-avatar.glitch.me/overlays/' + s.value + '.png")';
                   y = this.parentNode.getElementsByClassName("same-as-selected");
                   yl = y.length;
                   for (k = 0; k < yl; k++) {
